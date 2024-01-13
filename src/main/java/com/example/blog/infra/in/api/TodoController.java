@@ -22,7 +22,7 @@ class TodoController {
     BlogPostResponse crateTodo(@RequestBody BlogRequest body) {
         BlogPost postPost = blogPostCreateService.create(BlogPostCreateCommand.of(body.getId(), body.getTitle(), body.getContent()));
 
-        return new BlogPostResponse(postPost.extractBadWords());
+        return BlogPostResponse.of(postPost.extractBadWords());
     }
 
 }

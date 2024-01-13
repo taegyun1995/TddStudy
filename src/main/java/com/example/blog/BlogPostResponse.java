@@ -1,17 +1,10 @@
 package com.example.blog;
 
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Value(staticConstructor = "of")
 public class BlogPostResponse {
 
     private String badWords;
-
-    public BlogPostResponse(String badWords) {
-        this.badWords = badWords;
-    }
 
 }
